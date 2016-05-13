@@ -16,6 +16,7 @@ $id = $mysql->insert("insert into test (id,name)values(?,?)",[1,'小明']);
 $state = $mysql->delete("delete from test where id=?",[1]);
 //更新,返回影响行数
 $state = $mysql->update("update test set name=? where id=?",['小明',1]);
-
+//执行完所有操作后不要忘记关闭连接
+$mysql->close();
 
 ```
