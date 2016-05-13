@@ -6,6 +6,8 @@ $mysql = new MySQL();
 $data = $mysql->query("select * from test");
 //带参数查询
 $data = $mysql->query("select * from test where id=? and name=?",[1,'小明']);
+//查询一条数据
+$test = $mysql->one("select * from test where id=?",[1]);
 //包含 in 的查询
 $data = $mysql->query("select * from test where id in ? and name=?",[[1,2,3,4,6],'小明']);
 //插入，返回主键ID
